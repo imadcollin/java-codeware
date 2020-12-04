@@ -38,6 +38,8 @@ public class MultiplicationTable {
 			sb.append(i + " * " + num + " = " + i * num+ "\n");
 
 		}
+		
+
 		return sb.toString(); 
 	}
 
