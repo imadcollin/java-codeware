@@ -1,3 +1,5 @@
+package codewar;
+
 /******************************************************************************
  * 
  * The Story: Bob is working as a bus driver. However, he has become extremely
@@ -18,7 +20,7 @@
  *******************************************************************************/
 
 public class EnoughSpace {
-
+	
 	public static void main(String[] args) {
 		
 		int check = enough(10, 5, 5);
@@ -58,3 +60,6 @@ public class EnoughSpace {
 	}
 
 }
+
+
+

@@ -1,6 +1,7 @@
+package codewar;
+
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-
 
 /******************************************************************************
  * 
@@ -19,10 +20,10 @@ import java.util.stream.IntStream;
 * 
  *******************************************************************************/
 
-class MultiplicationTable
- {
+public class MultiplicationTable {
+
 	public static void main(String[] args) {
-		String str = multiplicationStr(5);
+	//	String str = multiplicationStr(5);
 		//System.out.println(str);
 
 		String intStreamStr = multiplicationIntStream(5); 
@@ -43,4 +44,4 @@ class MultiplicationTable
 	public static String multiplicationIntStream(int num){
 		return IntStream.rangeClosed(1, 10).mapToObj(i -> i+" * "+num +" = " + i*num).collect(Collectors.joining("\n"));
 	}
-}
+ }
