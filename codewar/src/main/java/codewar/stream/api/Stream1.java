@@ -1,6 +1,7 @@
 package codewar.stream.api;
 
 import java.util.Arrays;
+import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -39,6 +40,11 @@ public class Stream1 {
         int sum2 = numbers.stream().collect(Collectors.summingInt(Integer::intValue));
         System.out.println(sum2);
 
+        int sum3 = numbers.stream().mapToInt(Integer::intValue).sum();
+        System.out.println(sum3);
+
+        IntSummaryStatistics statistics= numbers.stream().mapToInt(x->x).summaryStatistics();
+        System.out.println("Average:"+statistics.getAverage()+" Max: "+ statistics.getMax()+ " Min:"+ statistics.getMin());
 
     }
 }
