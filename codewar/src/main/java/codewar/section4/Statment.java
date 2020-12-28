@@ -1,5 +1,8 @@
 package codewar.section4;
 
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
+
 class Statement {
 
     public static void main(String[] args) {
@@ -42,6 +45,25 @@ class Statement {
         displayHighScorePosition("player 2 ", p2);
         displayHighScorePosition("player 3 ", p3);
         displayHighScorePosition("player 4 ", p4);
+
+        System.out.println("**************Dog**************");
+
+        System.out.println(shouldWakeUp(true,1));
+        System.out.println(shouldWakeUp(false,2));
+        System.out.println( shouldWakeUp(true,8));
+        System.out.println(shouldWakeUp(true, -1));
+
+        System.out.println("**************LeanYear**************");
+
+        System.out.println(isLeapYear(-1600));
+        System.out.println(isLeapYear(1600));
+        System.out.println(isLeapYear(2017));
+        System.out.println(isLeapYear(2000));
+
+        areEqualByThreeDecimalPlaces(3.1756, 3.175);
+        areEqualByThreeDecimalPlaces(3.175, 3.176);
+        areEqualByThreeDecimalPlaces(3.0, 3.0);
+        areEqualByThreeDecimalPlaces(-3.123, 3.123);
 
 
     }
@@ -87,6 +109,42 @@ class Statement {
 
         return -1;
 
+    }
+    public static boolean shouldWakeUp(boolean barking, int hourOfDay){
+        if(hourOfDay >= 0 && hourOfDay <=23 ) {
+
+            if(barking && hourOfDay <8 ) return true;
+            else if( hourOfDay > 22) return true ;
+            else return false  ;
+        }
+        return false;
+
+    }
+
+    public static boolean isLeapYear(int year){
+        if (year >=1 && year <=9999 ) {
+            if (year % 4 ==0) {
+                if (year% 100==0)
+                {
+                    if(year% 400 ==0) return true ;
+                    return false;
+                }
+                return true;
+            }
+            if(year %400==0) return true;
+        }
+        return false;
+    }
+
+    public static void areEqualByThreeDecimalPlaces(double a, double b){
+        boolean isEqual= false;
+        DecimalFormat df = new DecimalFormat("#.000");
+        df.setRoundingMode(RoundingMode.DOWN);
+
+        if (df.format(a).equals( df.format(b))){
+            isEqual= true ;
+        }
+        System.out.println(isEqual);
     }
 
 }
