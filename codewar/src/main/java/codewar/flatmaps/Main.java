@@ -2,6 +2,8 @@ package codewar.flatmaps;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main (String[] args){
@@ -27,5 +29,11 @@ public class Main {
 
         //Print the name of the employees in all departments
         departments.stream().flatMap(x->x.getEmployees().stream()).forEach(System.out::println);
+
+        //Group by age
+        Map<Integer,List<Employee>> listMap=  departments.stream().flatMap(x->x.getEmployees().stream()).collect(Collectors.groupingBy(x->x.getAge()));
+
+        //Get the String name by age
+        departments.stream().flatMap(x->x.getEmployees().stream()).reduce((a,b) -> a.getAge() < b.getAge()? a:b).ifPresent(System.out::println);
     }
 }
