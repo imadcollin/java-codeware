@@ -1,6 +1,8 @@
 package stream.lambda;
 
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Album {
@@ -42,6 +44,15 @@ public class Album {
             }
         }
         return  null;
+    }
+    public List<Movie> sortByName(List<Movie> list){
+        Collections.sort(list, new Comparator<Movie>() {
+            @Override
+            public int compare(Movie o1, Movie o2) {
+                return  (o1.getName().compareTo(o2.getName()));
+            }
+        });
+        return  list;
     }
 
 }
