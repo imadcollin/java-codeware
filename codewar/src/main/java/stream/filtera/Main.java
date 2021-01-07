@@ -3,6 +3,7 @@ package stream.filtera;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main (String[] args){
@@ -15,5 +16,17 @@ public class Main {
 
         System.out.println(students.size());
 
+        //Sorting..
+        List<Student> sortedList= sortByGender(students);
+        print(sortedList);
+
+    }
+
+    public static  List<Student> sortByGender(List<Student> list){
+       return  list.stream().filter(student -> student.getGender().equals("male")).collect(Collectors.toList());
+    }
+
+    public static void print(List<Student> list){
+        list.stream().forEach(System.out::println);
     }
 }
