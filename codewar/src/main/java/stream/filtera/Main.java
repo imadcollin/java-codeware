@@ -20,13 +20,19 @@ public class Main {
         List<Student> sortedList= sortByGender(students);
         print(sortedList);
 
+        //Find by name
+        findByName(students,"bob");
+        System.out.println(  findByName(students,"bob"));
     }
 
     public static  List<Student> sortByGender(List<Student> list){
-       return  list.stream().filter(student -> student.getGender().equals("male")).collect(Collectors.toList());
+        return  list.stream().filter(student -> student.getGender().equals("male")).collect(Collectors.toList());
     }
 
     public static void print(List<Student> list){
         list.stream().forEach(System.out::println);
+    }
+    public static Student findByName(List<Student> list,String name){
+        return list.stream().filter(student -> student.getName().equalsIgnoreCase(name)).findAny().orElse(null);
     }
 }
