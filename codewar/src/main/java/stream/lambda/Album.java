@@ -6,7 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Album {
-    private int id;
+    private final int id;
     private String name;
     private List<Movie> movies;
 
@@ -63,7 +63,7 @@ public class Album {
             }
         });
 */
-        Collections.sort(list, Comparator.comparing(Movie::getName));
+        list.sort(Comparator.comparing(Movie::getName));
         return list;
     }
 

@@ -11,8 +11,7 @@ public class Main {
         Student s2=new Student(2,22,"moa","female");
         Student s3=new Student(3,18,"kent","male");
 
-        List<Student> students=new ArrayList<>();
-        students.addAll(Arrays.asList(s1,s2,s3));
+        List<Student> students = new ArrayList<>(Arrays.asList(s1, s2, s3));
 
         System.out.println(students.size());
 
@@ -30,7 +29,7 @@ public class Main {
     }
 
     public static void print(List<Student> list){
-        list.stream().forEach(System.out::println);
+        list.forEach(System.out::println);
     }
     public static Student findByName(List<Student> list,String name){
         return list.stream().filter(student -> student.getName().equalsIgnoreCase(name)).findAny().orElse(null);

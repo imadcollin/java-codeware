@@ -10,12 +10,11 @@ public class Main {
         Student s2 = new Student(2, 22, "moa", "female");
         Student s3 = new Student(3, 18, "kent", "male");
 
-        List<Student> students = new ArrayList<>();
-        students.addAll(Arrays.asList(s1, s2, s3));
+        List<Student> students = new ArrayList<>(Arrays.asList(s1, s2, s3));
 
         System.out.println(students.size());
 
-        Consumer<Student> studentConsumer= (s)->System.out.println(s);
+        Consumer<Student> studentConsumer= System.out::println;
         students.forEach(studentConsumer);
     }
 
