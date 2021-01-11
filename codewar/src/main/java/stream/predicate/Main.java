@@ -20,6 +20,12 @@ public class Main {
         Predicate<Student> predicate = i -> i.getName().equals("bob");
         System.out.println(predicate.test(s1));
 
+        Predicate<Student> agesSort= (stude) ->stude.getAge()>15; 
+        studentsSort(students, agesSort);
 
+    }
+
+    public static void studentsSort(List<Student> list,  Predicate predicate ){
+        list.stream().filter(predicate).forEach(System.out::println);
     }
 }
