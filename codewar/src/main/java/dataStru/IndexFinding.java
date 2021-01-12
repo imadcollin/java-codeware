@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class IndexFinding {
     public static Scanner scanner= new Scanner(System.in);
     public static void main (String []args){
-        ArrayList<ArrayList<Integer>> parent = new ArrayList<ArrayList<Integer>>();
+        ArrayList<ArrayList<Integer>> parent = new ArrayList<>();
         // System.out.println("Enter No of Arrays");
 
         int arrs= scanner.nextInt();
@@ -33,7 +33,7 @@ public class IndexFinding {
         else System.out.println(temp.get(el-1));
     }
     static ArrayList<Integer> generateArr(int num ){
-        ArrayList<Integer> arrayList= new ArrayList<Integer>();
+        ArrayList<Integer> arrayList= new ArrayList<>();
         // Scanner scanner= new Scanner(System.in);
         //  System.out.println("Enter the digits");
         while (num>0) {
