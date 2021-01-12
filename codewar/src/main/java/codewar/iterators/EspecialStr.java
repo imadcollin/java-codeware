@@ -1,12 +1,11 @@
 package codewar.iterators;
 
-import javax.swing.text.html.HTMLDocument;
 import java.util.ArrayList;
 import java.util.Iterator;
 
 public class EspecialStr {
     public static void main(String[] args) {
-        ArrayList arrayList = new ArrayList();
+        ArrayList arrayList = new ArrayList<>();
         arrayList.add("42");
         arrayList.add("###");
         arrayList.add("Hello");

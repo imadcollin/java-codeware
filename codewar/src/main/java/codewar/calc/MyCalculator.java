@@ -3,11 +3,9 @@ package codewar.calc;
 import java.util.Scanner;
 
 interface AdvancedArithmetic{
-    int divisor_sum(int n);
 }
 class MyCalculator implements AdvancedArithmetic{
     public int divisor_sum(int n){ //6 1 ,2 ,3 ,6  // 20 10 5 4 1
-        int counter= 0 ;
         int res=0;
         for (int i=1; i<n; i++){
             if (n%i==0){
@@ -33,8 +31,8 @@ class Solution{
      */
     static void ImplementedInterfaceNames(Object o){
         Class[] theInterfaces = o.getClass().getInterfaces();
-        for (int i = 0; i < theInterfaces.length; i++){
-            String interfaceName = theInterfaces[i].getName();
+        for (Class theInterface : theInterfaces) {
+            String interfaceName = theInterface.getName();
             System.out.println(interfaceName);
         }
     }

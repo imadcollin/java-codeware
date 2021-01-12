@@ -31,7 +31,7 @@ public class Main {
         departments.stream().flatMap(x->x.getEmployees().stream()).forEach(System.out::println);
 
         //Group by age
-        Map<Integer,List<Employee>> listMap=  departments.stream().flatMap(x->x.getEmployees().stream()).collect(Collectors.groupingBy(x->x.getAge()));
+        Map<Integer,List<Employee>> listMap=  departments.stream().flatMap(x->x.getEmployees().stream()).collect(Collectors.groupingBy(Employee::getAge));
 
         //Get the String name by age
         departments.stream().flatMap(x->x.getEmployees().stream()).reduce((a,b) -> a.getAge() < b.getAge()? a:b).ifPresent(System.out::println);
