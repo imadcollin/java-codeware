@@ -1,7 +1,6 @@
 package stream.lambda;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -20,7 +19,6 @@ public class Main {
         album1.addMovies(m2);
 
         // get all movies
-        album1.getAllMovies();
         System.out.println(album1.getAllMovies());
         //Get by name
         Movie myMovie= album1.getMovieByName("cool");
@@ -29,7 +27,6 @@ public class Main {
         // Remove movie
         album1.deleteMovieById("1");
         // Check the list
-        album1.getAllMovies();
         System.out.println(album1.getAllMovies());
 
         album1.addMovies(m1);

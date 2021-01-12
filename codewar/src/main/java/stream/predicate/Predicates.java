@@ -15,7 +15,7 @@ public class Predicates {
         boolean both = isGreaterAndSmaller(i->i>10,integer -> integer<20,15);
         System.out.println(both);
 
-        boolean or = or(i->i>10, x->x<20, 19);
+        boolean or = or(i->i>10, x->x<20);
         System.out.println(or);
 
         boolean isEqual= isEqual("test");
@@ -26,12 +26,12 @@ public class Predicates {
         return predicate.test(num);
     }
 
-    public static boolean isGreaterAndSmaller(Predicate<Integer> predicatem, Predicate<Integer> predicate2,int num1){
-        Predicate<Integer> both = predicatem.and(predicate2);
+    public static boolean isGreaterAndSmaller(Predicate<Integer> predicate, Predicate<Integer> predicate2,int num1){
+        Predicate<Integer> both = predicate.and(predicate2);
       return   both.test(num1);
     }
 
-    public static boolean or(Predicate<Integer> p1, Predicate<Integer> p2, int num ){
+    public static boolean or(Predicate<Integer> p1, Predicate<Integer> p2 ){
         Predicate<Integer> or = p1.or(p2);
          return  or.test(20);
     }

@@ -1,9 +1,9 @@
 package stream.lambda;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Album {
     private final int id;
@@ -31,7 +31,7 @@ public class Album {
             }
 
              */
-            movies.stream().filter(movie -> movie.getId().equals(id));
+            movies.stream().filter(movie -> movie.getId().equals(id)).collect(Collectors.toList());
         }
     }
 
@@ -49,7 +49,7 @@ public class Album {
                 }
             }
        */
-            return movies.stream().filter(movie -> movie.getName().equals(name)).findAny().get();
+            return movies.stream().filter(movie -> movie.getName().equals(name)).findAny().orElse(null);
         }
 
         return null;
