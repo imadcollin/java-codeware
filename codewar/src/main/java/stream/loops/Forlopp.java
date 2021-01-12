@@ -45,7 +45,7 @@ public class Forlopp {
     }
 
     public static void printLamda(List list) {
-        list.forEach(x -> System.out.println(x));
+        list.forEach(System.out::println);
     }
 
 }
