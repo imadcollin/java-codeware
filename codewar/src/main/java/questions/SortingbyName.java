@@ -25,22 +25,20 @@ public class SortingbyName {
         employees.add(emp5);
         System.out.println("List before sorting : ");
         employees = Employee.sorting(employees);
-        for (Employee e : employees) {
-            System.out.println(e.name + " - " + e.age);
-        }
+        Employee.print(employees);
 
         // Sort by names
+        System.out.println("List by names : ");
+
         employees = Employee.sorting(employees);
-        for (Employee e : employees) {
-            System.out.println(e.name + " - " + e.age);
-        }
+        Employee.print(employees);
 
         // Sort by age
-        employees = Employee.sorting2(employees);
+        System.out.println("List by ages : ");
 
-        for (Employee e : employees) {
-            System.out.println(e.name + " - " + e.age);
-        }
+        employees = Employee.sorting2(employees);
+        Employee.print(employees);
+
     }
 }
 
@@ -69,5 +67,11 @@ class Employee {
 
     public static List<Employee> sorting2(List<Employee> list) {
         return list.stream().sorted(Comparator.comparing(Employee::getAge)).collect(Collectors.toList());
+    }
+
+    public static void print(List<Employee> list) {
+        for (Employee employee : list) {
+            System.out.println(employee.name + " - " + employee.age);
+        }
     }
 }
