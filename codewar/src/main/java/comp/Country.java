@@ -1,15 +1,19 @@
 package comp;
 
-public class Country implements Comparable {
-    private int id;
-    private String name;
+public class Country implements Comparable{
+     int id;
+     String name;
 
     public Country(int id, String name) {
+        super();
         this.id = id;
         this.name = name;
     }
-
-    public Strign getName() {
+    @Override
+    public int compareTo(Country country) {
+        return this.getId().compareTo(country.getId());
+    }
+    public String getName() {
         return name;
     }
 
@@ -31,10 +35,6 @@ public class Country implements Comparable {
         return "Name is : " + name + " and ID is:  " + id;
     }
 
-    @Override
-    public int compareTo(Object o) {
-        // TODO Auto-generated method stub
-        return 0;
-    }
+  
 
 }
