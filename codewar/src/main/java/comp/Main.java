@@ -24,14 +24,14 @@ public class Main {
         System.out.println("Before Sort  : ");
         for (int i = 0; i < listOfCountries.size(); i++) {
             Country country=(Country) listOfCountries.get(i);
-            System.out.println("Country Id: "+country.getCountryId()+"||"+"Country name: "+country.getCountryName());
+          //  System.out.println("Country Id: "+country.getCountryId()+"||"+"Country name: "+country.getCountryName());
         }
         Collections.sort(listOfCountries);
  
         System.out.println("After Sort  : ");
         for (int i = 0; i < listOfCountries.size(); i++) {
             Country country=(Country) listOfCountries.get(i);
-            System.out.println("Country Id: "+country.getCountryId()+"|| "+"Country name: "+country.getCountryName());
+            //System.out.println("Country Id: "+country.getCountryId()+"|| "+"Country name: "+country.getCountryName());
         }
 
     }

@@ -1,6 +1,6 @@
 package comp;
 
-public class Country implements Comparable{
+public class Country {
      int id;
      String name;
 
@@ -9,10 +9,10 @@ public class Country implements Comparable{
         this.id = id;
         this.name = name;
     }
-    @Override
-    public int compareTo(Country country) {
-        return this.getId().compareTo(country.getId());
-    }
+    // @Override
+    // public int compareTo(Country country) {
+    //     return this.getId().compareTo(country.getId());
+    // }
     public String getName() {
         return name;
     }
