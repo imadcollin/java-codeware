@@ -21,8 +21,8 @@ public class Department {
         this.employees.add(employee);
     }
 
-    public void removeEmployee(String name) {
-        employees.stream().filter(x -> !(x.getName().equals(name))).collect(Collectors.toList());
+    public List<Employee> removeEmployee(String name) {
+        return employees.stream().filter(x -> (!  name.equals(x.getName()))).collect(Collectors.toList());
     }
 
 }
