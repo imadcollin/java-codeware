@@ -23,4 +23,11 @@ if (size==0) increaseSize()
         element = Arrays.copyOf(element, newSize);
     }
 
+    public E get(int i ){
+        if (size <i || i > element.length) {
+            throw new IndexOutOfBoundsException("Not found"); 
+        }
+        return (E) element[i]; 
+    }
+
 }
