@@ -1,4 +1,4 @@
-package comp;
+package countryExample;
 
 import java.util.ArrayList;
 import java.util.Collections;
