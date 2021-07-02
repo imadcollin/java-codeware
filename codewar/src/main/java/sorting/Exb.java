@@ -1,4 +1,4 @@
-package questions;
+package sorting;
 
 import java.util.HashSet;
 
